@@ -1,0 +1,19 @@
+const puppeteer = require('puppeteer');
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://www.facebook.com');
+
+  // Login to Facebook
+  // Add code to login using your credentials
+
+  // Find the post you want to react to
+  const postSelector = 'your_post_selector';
+  await page.waitForSelector(postSelector);
+
+  // Auto react to the post
+  await page.click('your_react_button_selector');
+
+  await browser.close();
+})();
